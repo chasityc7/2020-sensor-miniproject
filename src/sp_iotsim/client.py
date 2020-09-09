@@ -26,6 +26,7 @@ async def main(port: int, addr: str, max_packets: int, log_file: Path):
 
     uri = f"ws://{addr}:{port}"
 
+
     async with websockets.connect(uri) as websocket:
         qb = await websocket.recv()
         if isinstance(qb, bytes):
